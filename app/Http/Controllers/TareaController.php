@@ -40,4 +40,18 @@ class TareaController extends Controller
 
         return response()->json(['deleted' => true]);
     }
+
+    public function Modificar(Request $request, $id){
+        $tarea = Tarea::findOrFail($id);
+
+        $tarea->titulo = $request->post('titulo');
+        $tarea->id_autor = $request->post('id_autor');
+        $tarea->usuario_asignado = $request->post('usuario_asignado');
+        $tarea->cuerpo = $request->post('cuerpo');
+        $tarea->fecha_de_expiracion = $request->post('fecha_de_expiracion');
+        
+        $tarea->save();
+
+        return $tarea;
+    }
 }

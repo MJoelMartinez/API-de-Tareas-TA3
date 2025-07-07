@@ -21,6 +21,10 @@ Route::delete('/tarea/{id}',[
     TareaController::class, 'Eliminar'
 ]);
 
+Route::put('/tarea/{id}',[
+    TareaController::class, 'Modificar'
+]);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
