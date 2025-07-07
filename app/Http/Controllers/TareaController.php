@@ -18,4 +18,18 @@ class TareaController extends Controller
 
         return $tarea;
     }
+
+    public function Crear(Request $request){
+        $tarea = new Tarea();
+
+        $tarea->titulo = $request->post('titulo');
+        $tarea->id_autor = $request->post('id_autor');
+        $tarea->usuario_asignado = $request->post('usuario_asignado');
+        $tarea->cuerpo = $request->post('cuerpo');
+        $tarea->fecha_de_expiracion = $request->post('fecha_de_expiracion');
+        
+        $tarea->save();
+
+        return $tarea;
+    }
 }

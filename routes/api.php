@@ -13,6 +13,10 @@ Route::get('/tarea/{id}',[
     TareaController::class, 'Buscar'
 ]);
 
+Route::post('/tarea',[
+    TareaController::class, 'Crear'
+]);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
