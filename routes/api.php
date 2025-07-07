@@ -7,7 +7,11 @@ use App\Http\Controllers\TareaController;
 
 Route::get('/tarea',[
     TareaController::class, 'ListarTodas'
-]);   
+]);
+
+Route::get('/tarea/{id}',[
+    TareaController::class, 'Buscar'
+]);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
