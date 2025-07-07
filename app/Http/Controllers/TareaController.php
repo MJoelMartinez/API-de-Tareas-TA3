@@ -13,4 +13,9 @@ class TareaController extends Controller
         return $tareas;
     }
 
+    public function Buscar(Request $request, $id){
+        $tarea = Tarea::findOrFail($id);
+
+        return $tarea;
+    }
 }
