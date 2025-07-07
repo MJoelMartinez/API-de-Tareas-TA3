@@ -32,4 +32,12 @@ class TareaController extends Controller
 
         return $tarea;
     }
+
+    public function Eliminar(Request $request, $id){
+        $tarea = Tarea::findOrFail($id);
+
+        $tarea->delete();
+
+        return response()->json(['deleted' => true]);
+    }
 }
