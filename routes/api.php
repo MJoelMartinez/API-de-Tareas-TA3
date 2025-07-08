@@ -30,6 +30,10 @@ Route::get('/comentario/{id}',[
     ComentarioController::class, 'ListarComentariosDeUnaTarea'
 ]);
 
+Route::post('/comentario',[
+    ComentarioController::class, 'Ingresar'
+]);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
