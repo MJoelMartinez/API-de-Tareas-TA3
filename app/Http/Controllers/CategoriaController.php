@@ -13,4 +13,15 @@ class CategoriaController extends Controller
 
         return $categorias;
     }
+
+    public function Asignar(Request $request){
+        $idTarea = $request->post('idTarea');
+        $tarea = Tarea::findOrFail($idTarea);
+
+        $categoria = new Categoria();
+        $categoria->id_tarea = $request->post('idTarea');
+        $categoria->nombre = $request->post('nombre');
+
+        return $categoria;
+    }
 }
