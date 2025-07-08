@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TareaController;
 use App\Http\Controllers\ComentarioController;
+use App\Http\Controllers\CategoriaController;
 
 Route::get('/tarea',[
     TareaController::class, 'ListarTodas'
@@ -32,6 +33,10 @@ Route::get('/comentario/{id}',[
 
 Route::post('/comentario',[
     ComentarioController::class, 'Ingresar'
+]);
+
+Route::get('/categoria/{id}',[
+    CategoriaController::class, 'ListarCategoriasDeUnaTarea'
 ]);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
